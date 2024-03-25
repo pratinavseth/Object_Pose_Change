@@ -2,10 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def show_mask(mask_image, axis, random_color=False):
-    if random_color:
-        color = np.concatenate([np.random.random(3), np.array([0.6])], axis=0)
-    else:
-        color = np.array([255/255, 153/255, 10/255, 0.6])
+    color = np.array([255/255, 0/255, 0/255, 0.6])
     h, w = mask_image.shape[-2:]
     masked_image = mask_image.reshape(h, w, 1) * color.reshape(1, 1, -1)
     axis.imshow(masked_image)
